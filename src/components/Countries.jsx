@@ -40,6 +40,7 @@ const Countries = () => {
         </Col>
       </Row>
       <Row xs={2} md={3} lg={4} className=" g-3">
+      {/* Add filter here, and filter before you map the results. Your filter should use the search hook from above to compare against */}
       {countriesList.map((country) => {
         return (
           <CountryCard country={country} key={country.name.common}/>
