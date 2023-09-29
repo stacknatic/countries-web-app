@@ -20,6 +20,11 @@ const CountryCard = ({ country }) => {
                     className="bi bi-heart text-danger m-1 p-1"
                     onClick={() => dispatch(addFavourite(country.name.common))}></i>
                   )}
+                    <LinkContainer
+                 to={`/countries/${country.name.common}`}
+                 state={{ country: country }}
+               >
+                <div>
                 <Card.Img
                     variant="top"
                     src={country.flags.svg}
@@ -30,10 +35,6 @@ const CountryCard = ({ country }) => {
                       maxHeight: "200px",
                     }}
                   />
-                   <LinkContainer
-                to={`/countries/${country.name.common}`}
-                state={{ country: country }}
-              >
                   <Card.Body className="d-flex flex-column">
                     <Card.Title>{country.name.common}</Card.Title>
                     <Card.Subtitle className="mb-5 text-muted">
@@ -62,6 +63,7 @@ const CountryCard = ({ country }) => {
                       </ListGroup.Item>
                     </ListGroup>
                   </Card.Body>
+                  </div>
               </LinkContainer>
                 </Card>
             </Col>
