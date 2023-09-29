@@ -4,15 +4,12 @@ import { LinkContainer } from "react-router-bootstrap";
 import { addFavourite, removeFavourite } from "../features/countries/favouritesSlice";
 
 const CountryCard = ({ country }) => {
-  const favouritesList = useSelector((state) => state.favourites.favroutes);
+  const favouritesList = useSelector((state) => state.favourites.favourites);
   const dispatch = useDispatch();
 
     return (
             <Col className="mt-5">
-              <LinkContainer
-                to={`/countries/${country.name.common}`}
-                state={{ country: country }}
-              >
+             
                 <Card className="h-100">
                   {favouritesList?.includes(country.name.common) ? (
                     <i
@@ -33,6 +30,10 @@ const CountryCard = ({ country }) => {
                       maxHeight: "200px",
                     }}
                   />
+                   <LinkContainer
+                to={`/countries/${country.name.common}`}
+                state={{ country: country }}
+              >
                   <Card.Body className="d-flex flex-column">
                     <Card.Title>{country.name.common}</Card.Title>
                     <Card.Subtitle className="mb-5 text-muted">
@@ -61,8 +62,8 @@ const CountryCard = ({ country }) => {
                       </ListGroup.Item>
                     </ListGroup>
                   </Card.Body>
-                </Card>
               </LinkContainer>
+                </Card>
             </Col>
     )
 }
