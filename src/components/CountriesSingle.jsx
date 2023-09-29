@@ -28,7 +28,9 @@ const CountriesSingle = () => {
       setError(true)
     })
     .then((res) => {
-      setWeather(res.data)
+      if (res && res.data) {
+        setWeather(res.data)
+      }
       setLoading(false)
     })
     }
