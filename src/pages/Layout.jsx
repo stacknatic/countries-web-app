@@ -4,11 +4,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Outlet } from 'react-router-dom';
-import { logout } from '../auth/firebase';
+import { auth, logout } from '../auth/firebase';
 
 const Layout = () => {
+  const [user, loading] = useAuthState(auth);
   return (
     <Container fluid>
       <Row>
@@ -23,6 +25,9 @@ const Layout = () => {
                 <LinkContainer to="/countries">
                   <Nav.Link>Countries</Nav.Link>
                 </LinkContainer>
+                <LinkContainer to="/favourites">
+                  <Nav.Link>Favourites</Nav.Link>
+                </LinkContainer>
                 <LinkContainer to="/login">
                   <Nav.Link>Login</Nav.Link>
                 </LinkContainer>
@@ -31,7 +36,9 @@ const Layout = () => {
                 </LinkContainer>
               </Nav>
             </Navbar.Collapse>
-            <Button onClick={logout}>Logout</Button>
+            { user ? (
+              <Button variant="primary" hidden={loading} onClick={logout}>
+                Logout</Button>) : (<LinkContainer to="/login"><Button>Login</Button></LinkContainer>)}
           </Container>
         </Navbar>
       </Row>
