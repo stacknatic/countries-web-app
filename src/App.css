@@ -2,33 +2,22 @@
   font-size: 1.2rem;
 }
 body{
-  background-color: skyblue;
+  background-color: rgb(188, 219, 233);
 
 }
 form{
   background-color: #1f1f1f;
   border: 1px solid #ccc;
   padding: 1rem;
-  border-radius: 10px
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
 }
 
-.custom-navbar {
-  background-color: blue;
-  color: white!important;
-}
-.nav-link{
-  color: #fff;
-}
-.navbar-nav .nav-link.active{
-  color: skyblue;
-}
-.navbar-brand{
-  color: #fff;
-}
-
-/* CSS for positioning the slide buttons */
+/* countriesSingle slide buttons CSS */
 .carousel-control-prev, .carousel-control-next {
-  top: 50%; /* Adjust the value to position the buttons vertically as needed */
+  top: 50%; 
   transform: translateY(-50%);
 }
 

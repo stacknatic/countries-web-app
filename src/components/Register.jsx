@@ -9,7 +9,7 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState(''); // Add confirmation password state
     const [name, setName] = useState('');
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
 
     const register = () => {
@@ -27,7 +27,7 @@ const Register = () => {
     useEffect(() => {
         if (loading) return;
         if (user) navigate('/countries');
-    }, [user, loading]);
+    }, [user, loading, navigate]);
 
     return (
         <Container>
@@ -66,8 +66,8 @@ const Register = () => {
                                 placeholder="Confirm Password"
                             />
                         </Form.Group>
-                        <Button onClick={register}>Register</Button>
-                        <div className="text-white">
+                        <Button onClick={register} className="mt-2">Register</Button>
+                        <div className="text-white m-2">
                             Already have an account?&nbsp;
                             <Link to="/login" className="link-primary">Login</Link>
                         </div>

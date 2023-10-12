@@ -33,6 +33,7 @@ const ResetPass = () => {
         <Button variant="primary" onClick={handleResetPassword}>
           Reset Password
         </Button>
+        <Link to="/login" className="text-white"><Button className="m-3">Back to login page</Button></Link>
       </Form>
     </Container>
   );

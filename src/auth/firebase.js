@@ -52,39 +52,13 @@ const logout = () => {
     signOut(auth)
 }
 
-// const sendPasswordResetEmail = (email) => {
-//     return auth
-//       .sendPasswordResetEmail(email)
-//       .then(() => {
-//         console.log('Password reset email sent successfully.');
-//       })
-//       .catch((error) => {
-//         console.error('Error sending password reset email:', error);
-//       });
-//   };
-
 const resetPassword = async (email) => {
     try {
       await sendPasswordResetEmail(auth, email);
-      // The reset email has been sent successfully.
+      alert('A password reset link has been sent to your email address. It may take a minute to arrive, so wait a couple of minutes before trying again.');
     } catch (error) {
-      // Handle errors here, e.g., display an error message to the user.
-      console.error("Password reset email not sent: ", error);
-      throw error; // You can choose to re-throw the error to handle it elsewhere.
+
+      alert("Password reset email not sent");
     }
 }
-
-// sendPasswordResetEmail(auth, email)
-//   .then(() => {
-//     // Password reset email sent!
-//     // ..
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-//   });
-  
-  
-
 export { auth, db, loginWithEmailAndPassword, logout, registerWithEmailAndPassword, resetPassword };
