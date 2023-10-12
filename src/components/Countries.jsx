@@ -83,7 +83,7 @@ const Countries = () => {
           ))}
       </Row>
       {loading && (
-        <div className="d-flex justify-content-center mt-3">
+        <div className="d-flex justify-content-center m-3">
           <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
           </Spinner>
