@@ -16,8 +16,8 @@ const Login = () => {
   }, [user, loading, navigate]);
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
-      <Form style={{ border: "1px solid #ccc", padding: "1rem", borderRadius: "10px" }}>
+    <Container className="d-flex justify-content-center">
+      <Form className="mt-5">
         <Form.Group className="mb-3">
           <Form.Control
             type="email"
@@ -37,8 +37,8 @@ const Login = () => {
         <Button variant="primary" onClick={() => loginWithEmailAndPassword(email, password)}>
           Login
         </Button>
-      <div className="mt-3">
-        Don't have an account? <Link to="/register">Register</Link>
+      <div className="mt-3 text-white">
+        Don't have an account? <Link to="/register" className="link-primary">Register</Link>
       </div>
       </Form>
     </Container>

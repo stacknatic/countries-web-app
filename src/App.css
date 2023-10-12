@@ -1,6 +1,16 @@
 *{
   font-size: 1.2rem;
 }
+body{
+  background-color: skyblue;
+
+}
+form{
+  background-color: #1f1f1f;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px
+}
 
 .custom-navbar {
   background-color: blue;

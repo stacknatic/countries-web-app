@@ -23,7 +23,7 @@ const Layout = () => {
       <Row> 
         <Navbar bg="dark" variant="light">
           <Container className="justify-content-end">
-            <Navbar.Brand href="#home">Countries Web App</Navbar.Brand>
+            <Navbar.Brand className='link-info'>Countries Web App</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav>

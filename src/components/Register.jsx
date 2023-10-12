@@ -67,9 +67,9 @@ const Register = () => {
                             />
                         </Form.Group>
                         <Button onClick={register}>Register</Button>
-                        <div>
+                        <div className="text-white">
                             Already have an account?&nbsp;
-                            <Link to="/login">Login</Link>
+                            <Link to="/login" className="link-primary">Login</Link>
                         </div>
                     </Form>
                 </Col>
