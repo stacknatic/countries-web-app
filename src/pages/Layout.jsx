@@ -20,8 +20,8 @@ const Layout = () => {
 
   return (
     <Container fluid>
-      <Row>
-        <Navbar bg="light" variant="light">
+      <Row> 
+        <Navbar bg="dark" variant="light">
           <Container className="justify-content-end">
             <Navbar.Brand href="#home">Countries Web App</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

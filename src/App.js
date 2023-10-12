@@ -12,6 +12,7 @@ import { auth } from './auth/firebase';
 import Favourites from './components/Favourites';
 import Login from './components/Login';
 import Register from './components/Register';
+import './App.css';
 
 const App = () => {
   const [user] = useAuthState(auth)

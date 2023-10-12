@@ -33,8 +33,8 @@ const Register = () => {
         <Container>
             <Row className="justify-content-center">
                 <Col xs={6}>
-                    <Form>
-                        <Form.Group>
+                    <Form className="mt-5" style={{ border: "1px solid #ccc", padding: "1rem", borderRadius: "10px" }}>
+                        <Form.Group className="mb-3">
                             <Form.Control
                                 type="text"
                                 value={name}
@@ -42,7 +42,7 @@ const Register = () => {
                                 placeholder="Full Name"
                             />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className="mb-3">
                             <Form.Control
                                 type="email"
                                 value={email}
@@ -50,7 +50,7 @@ const Register = () => {
                                 placeholder="Email"
                             />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className="mb-3">
                             <Form.Control
                                 type="password"
                                 value={password}
@@ -58,7 +58,7 @@ const Register = () => {
                                 placeholder="Password"
                             />
                         </Form.Group>
-                        <Form.Group>
+                        <Form.Group className="mb-3">
                             <Form.Control
                                 type="password"
                                 value={confirmPassword}
@@ -68,7 +68,7 @@ const Register = () => {
                         </Form.Group>
                         <Button onClick={register}>Register</Button>
                         <div>
-                            Already have an account?
+                            Already have an account?&nbsp;
                             <Link to="/login">Login</Link>
                         </div>
                     </Form>
