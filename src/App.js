@@ -13,6 +13,7 @@ import Favourites from './components/Favourites';
 import Login from './components/Login';
 import Register from './components/Register';
 import './App.css';
+import PasswordReset from './components/PasswordReset';
 
 const App = () => {
   const [user] = useAuthState(auth)
@@ -23,6 +24,7 @@ const App = () => {
 
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/reset-password" element={<PasswordReset />} />
           <Route path="/register" element={<Register />} />
 
           <Route element={<ProtectedRoute user={user} />}>
