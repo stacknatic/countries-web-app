@@ -6,16 +6,24 @@ import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom'; // Import useHistory
 import { auth, logout } from '../auth/firebase';
 
 const Layout = () => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
+  const history = useNavigate(); // Get the history object
+
+  const handleLogout = async () => {
+    await logout();
+    history.push('/'); // Redirect to the '/' route after logging out
+  };
+
   return (
     <Container fluid>
       <Row>
         <Navbar bg="light" variant="light">
           <Container className="justify-content-end">
+            <Navbar.Brand href="#home">Countries Web App</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav>
@@ -28,17 +36,22 @@ const Layout = () => {
                 <LinkContainer to="/favourites">
                   <Nav.Link>Favourites</Nav.Link>
                 </LinkContainer>
-                <LinkContainer to="/login">
-                  <Nav.Link>Login</Nav.Link>
-                </LinkContainer>
-                <LinkContainer to="/register">
-                  <Nav.Link>Register</Nav.Link>
-                </LinkContainer>
+                {user ? (
+                  <Button variant="primary" onClick={handleLogout}>
+                    Logout
+                  </Button>
+                ) : (
+                  <>
+                    <LinkContainer to="/login">
+                      <Nav.Link>Login</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to="/register">
+                      <Nav.Link>Register</Nav.Link>
+                    </LinkContainer>
+                  </>
+                )}
               </Nav>
             </Navbar.Collapse>
-            { user ? (
-              <Button variant="primary" hidden={loading} onClick={logout}>
-                Logout</Button>) : (<LinkContainer to="/login"><Button>Login</Button></LinkContainer>)}
           </Container>
         </Navbar>
       </Row>

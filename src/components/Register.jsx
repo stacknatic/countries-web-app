@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Form, Container, Row, Col } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, registerWithEmailAndPassword } from "../auth/firebase";
@@ -7,48 +7,75 @@ import { auth, registerWithEmailAndPassword } from "../auth/firebase";
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [name, setName] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState(''); // Add confirmation password state
+    const [name, setName] = useState('');
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate();
 
     const register = () => {
-        if(!name) alert("Please enter name")
-        registerWithEmailAndPassword(name, email, password)
+        if (!name) {
+            alert("Please enter name");
+            return;
+        }
+        if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+        }
+        registerWithEmailAndPassword(name, email, password);
     }
 
     useEffect(() => {
         if (loading) return;
-        if (user) navigate('/countries')
-    },[user, loading])
+        if (user) navigate('/countries');
+    }, [user, loading]);
 
     return (
-        <div>
-            <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Full Name"
-            />
-            <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-            />
-            <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-            />
-            <Button onClick={register}>Register</Button>
-            <div>
-                Already have an account?
-                <Link to="/login">Login</Link>
-            </div>
-        </div>
-    )
-
+        <Container>
+            <Row className="justify-content-center">
+                <Col xs={6}>
+                    <Form>
+                        <Form.Group>
+                            <Form.Control
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                placeholder="Full Name"
+                            />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Control
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Email"
+                            />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Control
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="Password"
+                            />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Control
+                                type="password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                placeholder="Confirm Password"
+                            />
+                        </Form.Group>
+                        <Button onClick={register}>Register</Button>
+                        <div>
+                            Already have an account?
+                            <Link to="/login">Login</Link>
+                        </div>
+                    </Form>
+                </Col>
+            </Row>
+        </Container>
+    );
 }
 
 export default Register;

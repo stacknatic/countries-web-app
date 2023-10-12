@@ -52,4 +52,16 @@ const logout = () => {
     signOut(auth)
 }
 
-export { auth, db, loginWithEmailAndPassword, logout, registerWithEmailAndPassword };
+const sendPasswordResetEmail = (email) => {
+    return auth
+      .sendPasswordResetEmail(email)
+      .then(() => {
+        console.log('Password reset email sent successfully.');
+      })
+      .catch((error) => {
+        console.error('Error sending password reset email:', error);
+      });
+  };
+  
+
+export { auth, db, loginWithEmailAndPassword, logout, registerWithEmailAndPassword, sendPasswordResetEmail };
