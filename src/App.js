@@ -14,6 +14,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import './App.css';
 import PasswordReset from './components/PasswordReset';
+import Footer from './components/Footer';
 
 const App = () => {
   const [user] = useAuthState(auth)
@@ -32,9 +33,9 @@ const App = () => {
             <Route path="/countries" element={<Countries />} />
             <Route path="/countries/:single" element={<CountriesSingle />} />
           </Route>
-
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
