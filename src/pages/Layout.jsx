@@ -20,10 +20,13 @@ const Layout = () => {
 
   return (
     <Container fluid>
-      <Row>
-        <Navbar bg="light" variant="light">
+      <Row className='mt-5'> 
+        <Navbar bg="dark" variant="dark" className='p-3' fixed="top">
           <Container className="justify-content-end">
-            <Navbar.Brand href="#home">Countries Web App</Navbar.Brand>
+            <Container>
+
+            <Navbar.Brand className='link-info'>Countries Web App</Navbar.Brand>
+            </Container>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav>

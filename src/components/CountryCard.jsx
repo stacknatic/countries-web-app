@@ -45,19 +45,19 @@ const CountryCard = ({ country }) => {
                       className="flex-grow-1 justify-content-end"
                     >
                       <ListGroup.Item>
-                        <i className="bi bi-translate me-2">
+                        <i className="bi bi-translate me-2">&nbsp;
                           {Object.values(country.languages ?? {}).join(", ")}
                         </i>
                       </ListGroup.Item>
                       <ListGroup.Item>
-                        <i className="bi bi-cash-coin me-2">
+                        <i className="bi bi-cash-coin me-2">&nbsp;
                           {Object.values(country.currencies ?? {})
                             .map((currency) => currency.name)
                             .join(", ")}
                         </i>
                       </ListGroup.Item>
                       <ListGroup.Item>
-                        <i className="bi bi-people me-2">
+                        <i className="bi bi-people me-2">&nbsp;
                           {country.population.toLocaleString()}
                         </i>
                       </ListGroup.Item>

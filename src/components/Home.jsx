@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div>
+    <div className='text-center mt-5'>
       <div>
         <span>Countries app </span>is a simple React application made in
         Business College Helsinki lessons. App uses{' '}

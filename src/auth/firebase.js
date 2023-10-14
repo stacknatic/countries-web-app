@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -52,16 +52,13 @@ const logout = () => {
     signOut(auth)
 }
 
-const sendPasswordResetEmail = (email) => {
-    return auth
-      .sendPasswordResetEmail(email)
-      .then(() => {
-        console.log('Password reset email sent successfully.');
-      })
-      .catch((error) => {
-        console.error('Error sending password reset email:', error);
-      });
-  };
-  
+const resetPassword = async (email) => {
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert('A password reset link has been sent to your email address. It may take a minute to arrive, so wait a couple of minutes before trying again.');
+    } catch (error) {
 
-export { auth, db, loginWithEmailAndPassword, logout, registerWithEmailAndPassword, sendPasswordResetEmail };
+      alert("Password reset email not sent");
+    }
+}
+export { auth, db, loginWithEmailAndPassword, logout, registerWithEmailAndPassword, resetPassword };
