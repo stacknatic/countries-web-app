@@ -41,7 +41,7 @@ const Countries = () => {
           if (visibleCountries < countriesList.length) {
             setCanLoadMore(true);
           } else {
-            console.log('No more countries to load.');
+            return null;
           }
 
           setLoading(false);

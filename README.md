@@ -48,3 +48,5 @@
 
 - Fixed header to top.
 
+- Added footer.
+
