@@ -32,7 +32,7 @@
  
 ### App Background Info
 
-**The original project was cloned from @martin-holland's Country App lesson. Below are the features that I added to it.** 
+**The initial project was cloned from @martin-holland's Country App lesson. Below are the features that I added to it.** 
 
 - Added additional password field (confirmation) to the registration form to ensure that a user doesn't mistakenly register with the wrong password.
 
