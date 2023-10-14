@@ -32,7 +32,7 @@
  
 ### App Background Info
 
-**The project was inspired from @martin-holland's Country App lesson.** 
+**The project was inspired by @martin-holland's Country App lesson.** 
 
 **Additional features:**
 
