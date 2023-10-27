@@ -52,3 +52,9 @@
 
 - Added footer.
 
+### Demo
+
+- email = demo@example.com
+
+- password = password
+
