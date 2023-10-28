@@ -19,7 +19,7 @@ import Footer from './components/Footer';
 const App = () => {
   const [user] = useAuthState(auth)
   return (
-    <BrowserRouter>
+    <BrowserRouter  basename={process.env.PUBLIC_URL}>
       <Routes>
           <Route path="/" element={<Layout />}>
 
