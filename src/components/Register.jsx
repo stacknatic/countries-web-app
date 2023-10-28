@@ -32,7 +32,7 @@ const Register = () => {
     return (
         <Container>
             <Row className="justify-content-center">
-                <Col xs={6}>
+                <Col>
                     <Form className="mt-5" style={{ border: "1px solid #ccc", padding: "1rem", borderRadius: "10px" }}>
                         <Form.Group className="mb-3">
                             <Form.Control
