@@ -59,7 +59,7 @@
 
 ### Demo
 
-Live url: [speedgame](https://stacknatic.github.io/countries-web-app)
+Live url: [countries app](https://stacknatic.github.io/countries-web-app)
 
 - email = demo@example.com
 
