@@ -52,7 +52,14 @@
 
 - Added footer.
 
+### Screenshots
+
+![alternative text](public/countries-app.png "countries web app screenshot")
+![alternative text](public/countries-barbados.jpeg "countries web app - Barbados")
+
 ### Demo
+
+Live url: [speedgame](https://stacknatic.github.io/countries-web-app)
 
 - email = demo@example.com
 
