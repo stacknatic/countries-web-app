@@ -1,7 +1,7 @@
 {
   "name": "countries-bootstrap",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://stacknatic.github.io/countries-web-app/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
