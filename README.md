@@ -58,3 +58,4 @@
 
 - password = password
 
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=stacknatic_countries-web-app)](https://sonarcloud.io/summary/new_code?id=stacknatic_countries-web-app)
