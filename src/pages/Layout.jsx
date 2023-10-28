@@ -14,7 +14,6 @@ const Layout = () => {
   const history = useNavigate(); // Get the history object
 
   const handleLogout = async () => {
-    await logout();
     history.push('/'); // Redirect to the '/' route after logging out
   };
 
