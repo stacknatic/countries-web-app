@@ -9,7 +9,7 @@ const Home = () => {
         <a href="https://restcountries.com/">https://restcountries.com/ </a> and{' '}
         <a href="https://openweathermap.org/">https://openweathermap.org/</a>.
       </div>
-        <img className='p-3 countries-photo' src={countries} alt="Countries image"  />
+        <img className='p-3 countries-photo' src={countries} alt="Countries"  />
     </div>
   );
 };
