@@ -72,7 +72,7 @@ const Countries = () => {
           </Form>
         </Col>
       </Row>
-      <Row xs={2} md={3} lg={4} className="g-3" ref={containerRef}>
+      <Row xs={1} md={2} lg={3} className="g-3" ref={containerRef}>
         {countriesList
           .filter((c) => {
             return c.name.official.toLowerCase().includes(search.toLowerCase());

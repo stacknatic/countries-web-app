@@ -17,7 +17,7 @@ const Login = () => {
 
   return (
     <Container className="d-flex justify-content-center">
-      <Form className="mt-5">
+      <Form className="mt-5 bg-dark p-4 rounded-2">
         <Form.Group className="mb-3">
           <Form.Control
             type="email"
