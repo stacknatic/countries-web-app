@@ -1,6 +1,6 @@
 {
-  "name": "countries-bootstrap",
-  "homepage": "http://localhost:3000/countries-web-app",
+  "name": "countries-web-app",
+  "homepage": "https://stacknatic.github.io/countries-web-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,6 +20,7 @@
     "react-router-bootstrap": "^0.26.2",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
+    "update": "^0.7.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
